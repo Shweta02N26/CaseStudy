@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Please fill out the survey" recipientType="Contact" relatedToType="Contact" language="{!Case(relatedTo.Language__c,'DE','DE','EN','EN','EN')}">
+<messaging:plainTextEmailBody >
+Hey {!relatedTo.FirstName}, {!$Label.EmailText} http://n26.com/survey/{!relatedTo.Id}
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

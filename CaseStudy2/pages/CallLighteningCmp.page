@@ -1,0 +1,20 @@
+<apex:page standardController="Case">
+<apex:includeLightning />
+    <div id="prodDisplay"></div> 
+    
+<script>
+    $Lightning.use("c:DisplayProductDetails", function() {
+    $Lightning.createComponent("c:DisplayProductInfo",
+    { 
+        countryName : "DE",
+        productName : "Black" ,
+     	dataColumns : "",
+        recordId: "{!Id}"
+ 	},
+   "prodDisplay",
+    function(component) {
+        component.set("v.recordId" , '{!$CurrentPage.parameters.Id}');
+    });
+ });
+ </script>
+</apex:page>
